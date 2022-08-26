@@ -29,6 +29,9 @@ class Main extends Sprite
 
 	public function new()
 	{
+		SUtil.uncaughtErrorHandler();
+		//SUtil.saveContent("your file name", ".txt", "lololol"); idk this lol
+
 		super();
 
 		if (stage != null)
@@ -70,15 +73,18 @@ class Main extends Sprite
 		#end
 
 		ClientPrefs.loadDefaultKeys();
+
+		SUtil.check();
+
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 
-		#if !mobile
+		//#if !mobile
 		fpsVar = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsVar);
 		if(fpsVar != null) {
 			fpsVar.visible = ClientPrefs.showFPS;
 		}
-		#end
+		//#end
 
 		#if html5
 		FlxG.autoPause = false;
