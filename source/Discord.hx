@@ -1,7 +1,8 @@
 package;
-
+#if sys
 import Sys.sleep;
 import discord_rpc.DiscordRpc;
+#end
 
 #if LUA_ALLOWED
 import llua.Lua;
@@ -26,7 +27,9 @@ class DiscordClient
 		while (true)
 		{
 			DiscordRpc.process();
+			#if sys
 			sleep(2);
+			#end
 			//trace("Discord Client Update");
 		}
 
