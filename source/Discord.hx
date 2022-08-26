@@ -1,8 +1,9 @@
 package;
 #if sys
 import Sys.sleep;
-import discord_rpc.DiscordRpc;
 #end
+
+import discord_rpc.DiscordRpc;
 
 #if LUA_ALLOWED
 import llua.Lua;
