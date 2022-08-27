@@ -108,6 +108,7 @@ class AndroidControls extends FlxSpriteGroup
 			FlxG.save.flush();
 		else
 			FlxG.save.data.controlsMode = curCtrl;
+			FlxG.save.flush();
 		}
 
 		return FlxG.save.data.controlsMode;
