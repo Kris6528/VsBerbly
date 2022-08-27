@@ -152,10 +152,10 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		super();
 	}
 
-	function onChangeHitsoundVolume()
+	/*function onChangeHitsoundVolume()
 	{
 		FlxG.sound.play(Paths.sound('hitsound'), ClientPrefs.hitsoundVolume);
-	}
+	}*/  //this is for psych latest XD
 
 	#if android
 	function onChangeGameOverVibration()
