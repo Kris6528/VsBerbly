@@ -93,14 +93,14 @@ class AndroidControls extends FlxSpriteGroup
 		}
 	}
 
-	public static function setMode(mode:String = 'Pad-Right'):Void
+	public function setMode(mode:String = 'Pad-Right'):Void
 	{
 		FlxG.save.data.controlsMode = mode;
 		FlxG.save.flush();
 		curCtrl = mode;
 	}
 
-	public function getMode():String
+	public static function getMode():String
 	{
 		if (FlxG.save.data.controlsMode == null)
 		{
