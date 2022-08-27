@@ -106,7 +106,9 @@ class AndroidControls extends FlxSpriteGroup
 		{
 			FlxG.save.data.controlsMode = 'Pad-Right';
 			FlxG.save.flush();
+		}
 		else
+		{
 			FlxG.save.data.controlsMode = curCtrl;
 			FlxG.save.flush();
 		}
