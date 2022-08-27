@@ -146,7 +146,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			'bool',
 			false);
 		addOption(option);
-		option.onChange = onChangeGameOverVibration;
+		//option.onChange = onChangeGameOverVibration;
 		#end
 
 		super();
@@ -157,7 +157,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		FlxG.sound.play(Paths.sound('hitsound'), ClientPrefs.hitsoundVolume);
 	}*/  //this is for psych latest XD
 
-	#if android
+	/*#if android
 	function onChangeGameOverVibration()
 	{
 		if(ClientPrefs.vibration)
@@ -165,5 +165,5 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			Hardware.vibrate(500);
 		}
 	}
-	#end
+	#end*/
 }
