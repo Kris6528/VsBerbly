@@ -11,6 +11,7 @@ class AndroidControls extends FlxSpriteGroup
 {
 	public var virtualPad:FlxVirtualPad;
 	public var hitbox:FlxHitbox;
+	public var curCtrl:String = 'Pad-Left';
 
 	public function new()
 	{
@@ -96,6 +97,7 @@ class AndroidControls extends FlxSpriteGroup
 	{
 		FlxG.save.data.controlsMode = mode;
 		FlxG.save.flush();
+		curCtrl = mode;
 	}
 
 	public static function getMode():String
@@ -104,6 +106,8 @@ class AndroidControls extends FlxSpriteGroup
 		{
 			FlxG.save.data.controlsMode = 'Pad-Right';
 			FlxG.save.flush();
+		else
+			FlxG.save.data.controlsMode = curCtrl;
 		}
 
 		return FlxG.save.data.controlsMode;
