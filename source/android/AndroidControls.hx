@@ -100,7 +100,7 @@ class AndroidControls extends FlxSpriteGroup
 		curCtrl = mode;
 	}
 
-	public static function getMode():String
+	public function getMode():String
 	{
 		if (FlxG.save.data.controlsMode == null)
 		{
