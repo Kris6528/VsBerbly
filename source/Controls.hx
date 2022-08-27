@@ -520,6 +520,7 @@ class Controls extends FlxActionSet
 		#end
 		super.update();
 	}
+}
 
 	// inline
 	public function checkByName(name:Action):Bool
