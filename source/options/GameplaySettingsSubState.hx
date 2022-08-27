@@ -167,5 +167,3 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 	}
 	#end
 }
-
-}
