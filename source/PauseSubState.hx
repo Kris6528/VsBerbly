@@ -148,7 +148,7 @@ class PauseSubState extends MusicBeatSubstate
 					PlayState.SONG = Song.loadFromJson(poop, name);
 					PlayState.storyDifficulty = curSelected;
 					CustomFadeTransition.nextCamera = transCamera;
-					MusicBeatState.resetState();
+					FlxG.resetState();
 					FlxG.sound.music.volume = 0;
 					//PlayState.changedDifficulty = true;
 					//PlayState.cpuControlled = false;
@@ -169,7 +169,7 @@ class PauseSubState extends MusicBeatSubstate
 					practiceText.visible = PlayState.practiceMode;*/
 				case "Restart Song":
 					CustomFadeTransition.nextCamera = transCamera;
-					MusicBeatState.resetState();
+					FlxG.resetState();
 					FlxG.sound.music.volume = 0;
 				/*case 'Botplay':
 					PlayState.cpuControlled = !PlayState.cpuControlled;
