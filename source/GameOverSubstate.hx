@@ -21,7 +21,7 @@ import sys.io.File;
 
 class GameOverSubstate extends MusicBeatSubstate
 {
-	var errMsg:String = '';
+	var trollMsg:String = '';
 
 	public var boyfriend:Boyfriend;
 	var camFollow:FlxPoint;
@@ -165,11 +165,11 @@ class GameOverSubstate extends MusicBeatSubstate
 			FlxG.sound.play(Paths.sound('underselect'));
 			}
 			else{
-				errMsg += "LOL WHAT A NOOB :troll: :troll:";
+				trollMsg += "LOL WHAT A NOOB :troll: :troll:";
 
 				FlxG.sound.play(Paths.sound('underselect'));
 				//Sys.command('mshta vbscript:Execute("msgbox ""LOL WHAT A NOOB :troll: :troll:"":close")');
-				Application.current.window.alert(errMsg, '');
+				Application.current.window.alert(trollMsg);
 				System.exit(1);
 				//Sys.exit(0);
 				
