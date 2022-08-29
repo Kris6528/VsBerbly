@@ -1064,9 +1064,10 @@ class PlayState extends MusicBeatState
 		timeTxt.cameras = [camHUD];
 		doof.cameras = [camHUD];
 
-                #if android
-                addAndroidControls();
-                #end
+		#if android
+		addAndroidControls();
+		#end
+
 
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
@@ -1492,6 +1493,11 @@ class PlayState extends MusicBeatState
 		}
 
 		inCutscene = false;
+
+		#if android
+		androidControls.visible = true;
+		#end
+
 		var ret:Dynamic = callOnLuas('onStartCountdown', []);
 		if(ret != FunkinLua.Function_Stop) {
 			generateStaticArrows(0);
@@ -3185,6 +3191,10 @@ class PlayState extends MusicBeatState
 	var transitioning = false;
 	public function endSong():Void
 	{
+		#if android
+		androidControls.visible = false;
+		#end
+
 		//Should kill you if you tried to cheat
 		if(!startingSong) {
 			notes.forEach(function(daNote:Note) {
