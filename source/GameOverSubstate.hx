@@ -10,6 +10,10 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
+#if android
+import flash.system.System;
+import lime.app.Application;
+#end
 #if desktop
 import sys.FileSystem;
 import sys.io.File;
@@ -17,6 +21,8 @@ import sys.io.File;
 
 class GameOverSubstate extends MusicBeatSubstate
 {
+	var errMsg:String = '';
+
 	public var boyfriend:Boyfriend;
 	var camFollow:FlxPoint;
 	var camFollowPos:FlxObject;
