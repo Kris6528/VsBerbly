@@ -23,6 +23,16 @@ class OutdatedState extends MusicBeatState
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
 
+		#if android
+		warnText = new FlxText(0, 0, FlxG.width,
+			"Sup bro, looks like you're running an   \n
+			outdated version of Psych Engine With Android Support (" + MainMenuState.psychEngineVersion + "),\n
+			please update to " + TitleState.updateVersion + "!\n
+			Press B to proceed anyway.\n
+			\n
+			Thank you for using the Port of the Engine!",
+			32);
+		#else
 		warnText = new FlxText(0, 0, FlxG.width,
 			"Sup bro, looks like you're running an   \n
 			outdated version of Psych Engine (" + MainMenuState.psychEngineVersion + "),\n
@@ -30,6 +40,7 @@ class OutdatedState extends MusicBeatState
 			\n
 			Thank you for using the Engine!",
 			32);
+		#end
 		warnText.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
 		warnText.screenCenter(Y);
 		add(warnText);
@@ -45,13 +56,18 @@ class OutdatedState extends MusicBeatState
 			if (controls.ACCEPT || controls.BACK) {
 				leftState = true;
 				CoolUtil.browserLoad("https://github.com/ShadowMario/FNF-PsychEngine/releases");
-				FlxG.sound.play(Paths.sound('cancelMenu'));
-				FlxTween.tween(warnText, {alpha: 0}, 1, {
-					onComplete: function (twn:FlxTween) {
-						MusicBeatState.switchState(new MainMenuState());
-					}
-				});
 			}
+			else if (controls.BACK) {
+				leftState = true;
+			}
+		}
+		if (leftState) {
+			FlxG.sound.play(Paths.sound('cancelMenu'));
+			FlxTween.tween(warnText, {alpha: 0}, 1, {
+				onComplete: function (twn:FlxTween) {
+					MusicBeatState.switchState(new MainMenuState());
+				}
+			}); //prevent bug when shows again in one time open ig
 		}
 		super.update(elapsed);
 	}
