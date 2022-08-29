@@ -2119,7 +2119,7 @@ class PlayState extends MusicBeatState
 			iconP1.swapOldIcon();
 		}*/
 
-		battlebg.velocity.set(-150, -150);
+		//battlebg.velocity.set(-150, -150);
 		//battlebg.x -= 5 / (ClientPrefs.framerate / 60);
 		//battlebg.y -= 5 / (ClientPrefs.framerate / 60);
 		//DAD.X = 2529 
