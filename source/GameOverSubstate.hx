@@ -168,7 +168,7 @@ class GameOverSubstate extends MusicBeatSubstate
 				FlxG.sound.play(Paths.sound('underselect'));
 				delay = new FlxTimer().start(0.5, function(tmr:FlxTimer) {
 					if(tmr.finished) {
-						showTroll()
+						showTroll();
 					}
 				}
 				FlxG.sound.destroy(Paths.sound(normalLoopSound)); //idk if this works
