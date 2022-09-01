@@ -65,7 +65,6 @@ class OutdatedState extends MusicBeatState
 		if (leftState) {
 			leftStateTrig();
 		}; //prevent bug when shows again in one time open ig
-		}
 		super.update(elapsed);
 	}
 	private function leftStateTrig() {
