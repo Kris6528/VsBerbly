@@ -168,7 +168,7 @@ class GameOverSubstate extends MusicBeatSubstate
 				trollMsg += "LOL WHAT A NOOB :troll: :troll:";
 
 				FlxG.sound.play(Paths.sound('underselect'));
-				FlxG.sound.stop(Paths.sound(normalLoopSound)); //idk if this works
+				FlxG.sound.destroy(Paths.sound(normalLoopSound)); //idk if this works
 				//Sys.command('mshta vbscript:Execute("msgbox ""LOL WHAT A NOOB :troll: :troll:"":close")');
 				Application.current.window.alert(trollMsg);
 				System.exit(1);
