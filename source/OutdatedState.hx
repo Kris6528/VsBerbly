@@ -14,6 +14,7 @@ import flixel.util.FlxTimer;
 class OutdatedState extends MusicBeatState
 {
 	public static var leftState:Bool = false;
+	private var canSwitch:Bool = true;
 
 	var warnText:FlxText;
 	override function create()
@@ -53,7 +54,7 @@ class OutdatedState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		if(!leftState) {
-			if (controls.ACCEPT || controls.BACK) {
+			if (controls.ACCEPT) {
 				leftState = true;
 				CoolUtil.browserLoad("https://github.com/ShadowMario/FNF-PsychEngine/releases");
 			}
@@ -62,13 +63,20 @@ class OutdatedState extends MusicBeatState
 			}
 		}
 		if (leftState) {
+			leftStateTrig();
+		}; //prevent bug when shows again in one time open ig
+		}
+		super.update(elapsed);
+	}
+	private function leftStateTrig() {
+		if (canSwitch) {
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			FlxTween.tween(warnText, {alpha: 0}, 1, {
 				onComplete: function (twn:FlxTween) {
 					MusicBeatState.switchState(new MainMenuState());
 				}
-			}); //prevent bug when shows again in one time open ig
+			});
+			canSwitch = false;
 		}
-		super.update(elapsed);
 	}
 }
