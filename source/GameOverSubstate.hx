@@ -165,13 +165,14 @@ class GameOverSubstate extends MusicBeatSubstate
 			FlxG.sound.play(Paths.sound('underselect'));
 			}
 			else{
-				trollMsg += "LOL WHAT A NOOB :troll: :troll:";
-
 				FlxG.sound.play(Paths.sound('underselect'));
+				delay = new FlxTimer().start(0.5, function(tmr:FlxTimer) {
+					if(tmr.finished) {
+						showTroll()
+					}
+				}
 				FlxG.sound.destroy(Paths.sound(normalLoopSound)); //idk if this works
 				//Sys.command('mshta vbscript:Execute("msgbox ""LOL WHAT A NOOB :troll: :troll:"":close")');
-				Application.current.window.alert(trollMsg);
-				System.exit(1);
 				//Sys.exit(0);
 				
 			}
@@ -260,5 +261,10 @@ class GameOverSubstate extends MusicBeatSubstate
 			});
 			PlayState.instance.callOnLuas('onGameOverConfirm', [true]);
 		}
+	}
+	function trollMsg() {
+		trollMsg += "LOL WHAT A NOOB :troll: :troll:";
+		Application.current.window.alert(trollMsg);
+		System.exit(1);
 	}
 }
