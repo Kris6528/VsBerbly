@@ -167,10 +167,10 @@ class GameOverSubstate extends MusicBeatSubstate
 			else{
 				FlxG.sound.play(Paths.sound('underselect'));
 				delay = new FlxTimer().start(0.5, function(tmr:FlxTimer) {
-					if(tmr.finished) {
-						showTroll();
-					}
-				}
+						if(tmr.finished) {
+							showTroll();
+						}
+					}, 1);
 				FlxG.sound.destroy(Paths.sound(normalLoopSound)); //idk if this works
 				//Sys.command('mshta vbscript:Execute("msgbox ""LOL WHAT A NOOB :troll: :troll:"":close")');
 				//Sys.exit(0);
