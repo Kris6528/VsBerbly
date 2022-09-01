@@ -144,7 +144,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			'If unchecked, will make the game to vibrate when you die.',
 			'vibration',
 			'bool',
-			false);
+			true);
 		addOption(option);
 		//option.onChange = onChangeGameOverVibration;
 		#end
