@@ -22,7 +22,7 @@ import sys.io.File;
 class GameOverSubstate extends MusicBeatSubstate
 {
 	var trollMsg:String = '';
-
+	var delay = '';
 	public var boyfriend:Boyfriend;
 	var camFollow:FlxPoint;
 	var camFollowPos:FlxObject;
@@ -262,7 +262,7 @@ class GameOverSubstate extends MusicBeatSubstate
 			PlayState.instance.callOnLuas('onGameOverConfirm', [true]);
 		}
 	}
-	function trollMsg() {
+	function showTroll() {
 		trollMsg += "LOL WHAT A NOOB :troll: :troll:";
 		Application.current.window.alert(trollMsg);
 		System.exit(1);
