@@ -22,7 +22,7 @@ import sys.io.File;
 class GameOverSubstate extends MusicBeatSubstate
 {
 	var trollMsg:String = '';
-	var delay = '';
+	var delay:FlxTimer;
 	public var boyfriend:Boyfriend;
 	var camFollow:FlxPoint;
 	var camFollowPos:FlxObject;
